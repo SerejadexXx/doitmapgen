@@ -1,0 +1,18 @@
+<div ng-show="editState" class="row inputDirectiveEditContainer">
+    <input type="text" ng-model="enteredValue" class="col-xs-9 inputDirectiveInput">
+    <div class="col-xs-3 inputDirectiveEditButton" ng-click="SetViewState()">
+        <i class="glyphicon glyphicon-ok"></i>
+    </div>
+</div>
+<div ng-show="!editState" class="row inputDirectiveViewContainer">
+    <div class="col-xs-2 inputDirectiveChangeInPreviewButton" ng-click="DecEnteredValue()">
+        <i class="glyphicon glyphicon-minus"></i>
+    </div>
+    <div class="col-xs-8 inputDirectivePreviewBox">
+        {{enteredValue}}
+        <i class="inputDirectiveChangeInPreviewButton glyphicon glyphicon-edit" ng-click="SetEditState()"></i>
+    </div>
+    <div class="col-xs-2 inputDirectiveChangeInPreviewButton" ng-click="IncEnteredValue()">
+        <i class="glyphicon glyphicon-plus"></i>
+    </div>
+</div>

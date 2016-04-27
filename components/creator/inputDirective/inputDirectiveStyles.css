@@ -1,0 +1,51 @@
+.inputDirectiveEditContainer {
+    width: 80px;
+    height: 20px;
+    padding: 2px;
+    margin: 0;
+}
+
+.inputDirectiveInput {
+    border: none;
+    padding: 0;
+    text-align: center;
+}
+
+.inputDirectiveEditButton {
+    padding: 0;
+    color: #AAAAAA;
+    background-color: white;
+}
+
+.inputDirectiveEditButton:hover {
+    cursor: pointer;
+}
+
+.inputDirectiveEditButton:active {
+    color: #BBBBBB;
+}
+
+.inputDirectiveViewContainer {
+    width: 80px;
+    height: 20px;
+    padding: 2px;
+    margin: 0;
+    background-color: white;
+}
+
+.inputDirectiveChangeInPreviewButton {
+    padding: 0;
+    color: #AAAAAA;
+}
+.inputDirectiveChangeInPreviewButton:hover {
+    cursor: pointer;
+}
+.inputDirectiveChangeInPreviewButton:active {
+    color: #BBBBBB;
+}
+
+.inputDirectivePreviewBox {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}

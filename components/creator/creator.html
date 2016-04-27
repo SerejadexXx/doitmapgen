@@ -1,0 +1,117 @@
+<div class="creatorContainer" ng-controller="creatorCtrl">
+    <div class="row creatorTopRow">
+        <div class="col-xs-2 creatorSideBox">
+            <h3>Goal form:</h3>
+            <div class="row">
+                <div class="col-xs-4">
+                    C
+                </div>
+                <div class="col-xs-4">
+                    R
+                </div>
+                <div class="col-xs-4">
+                    S
+                </div>
+            </div>
+            <h3>Goal size:</h3>
+            <div class="row">
+                <div class="col-xs-3" ng-repeat="size in goalSizes">
+                    <h2 ng-click="SetGoalSize(size.key)"
+                        ng-class="{
+                                selectableOption: true,
+                                activated: goalSize==size.key
+                            }">{{size.display}}</h2>
+                </div>
+            </div>
+            <h3>Goal text:</h3>
+            <div class="row">
+                <div class="col-xs-3" ng-repeat="size in textSizes">
+                    <h2 ng-click="SetTextSize(size.key)"
+                        ng-class="{
+                                selectableOption: true,
+                                activated: textSize==size.key
+                            }">{{size.display}}</h2>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-4 creatorInputGoalsCountLabel">
+                    <h3 class="inlineBlock">Goals:</h3>
+                </div>
+                <div class="col-xs-8 creatorInputGoalsCountWrapper">
+                    <input-directive value="goalsCount"></input-directive>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-7 creatorInputGoalsColorLabel">
+                    <h3 class="inlineBlock">Goals color:</h3>
+                </div>
+                <div class="col-xs-5 creatorInputGoalsColor">
+                    <input type="color" ng-model="goalsColor">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-7 creatorInputTextColorLabel">
+                    <h3 class="inlineBlock">Text color:</h3>
+                </div>
+                <div class="col-xs-5 creatorInputTextColor">
+                    <input type="color" ng-model="textColor">
+                </div>
+            </div>
+
+            <div class="creatorFoilInput">
+                <div class="row">
+                    <div class="col-xs-6 creatorInputFoilColorLabel">
+                        <h3>Foil color</h3>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="color"
+                               class="creatorInputFoilColor"
+                               ng-model="foilColor">
+                    </div>
+                </div>
+            </div>
+            <button class="btn creatorBtnSuccess">Save</button>
+            <button class="btn creatorBtnDanger">Discard</button>
+        </div>
+        <div class="col-xs-10 creatorContent">
+        </div>
+    </div>
+    <div class="row creatorBottomRow">
+        <div class="col-xs-2 creatorToggle">
+            <h2>View</h2>
+            <button ng-class="{
+                creatorToggleButton: true,
+                activated: viewState=='foil'
+                }"
+                    ng-click="viewState='foil'">
+                Foil
+            </button>
+            <div class="creatorToggleSlash"></div>
+            <button ng-class="{
+                creatorToggleDoneButton: true,
+                creatorToggleButton: true,
+                activated: viewState=='done'
+                }"
+                    ng-click="viewState='done'">
+                Done
+            </button>
+        </div>
+        <div class="col-xs-10 creatorViewInput">
+            <div class="col-xs-2" ng-repeat="positionView in positionViews">
+                <div ng-click="SelectPositionView(positionView.key)"
+                     ng-class="{
+                            creatorSelectablePositionView: true,
+                            creatorSelectedPositionsView: positionsView==positionView.key
+                        }">
+                    <img class="creatorPositionsView" ng-src="{{positionView.img}}" alt="positionView.key">
+                    <h3 class="creatorPositionsLabel">{{positionView.display}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
